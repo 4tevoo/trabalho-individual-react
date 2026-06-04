@@ -1,5 +1,10 @@
 import styled from 'styled-components';
+// ps.: geralmente em trabalhos individuais eu encho de comentários pra explicar já que não tem apresentação
+// mas esse tem pouco tempo (e eu também tenho pouco tempo) então talvez eu não comente tudo, foi mal Meneguelislislis
 
+
+// Estilização do Card com uma borda douradinha que combinou MUITO no hover
+// O backdrop filter dá um efeito leve de vidro sobre o background
 export const CardContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.9);
   border: 2px solid #f0f0f0;
@@ -13,21 +18,23 @@ export const CardContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(4px); /* Dá um efeito leve de vidro sobre o background */
+  backdrop-filter: blur(4px);
 
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-    border-color: #fdcb6e; /* Borda dourada de leve no hover */
+    border-color: #fdcb6e;
   }
 `;
 
+// Container para a mídia (imagem ou vídeo) com um fundo preto para evitar barras brancas estranhas
+// e com object-fit: cover pra não distorcer a imagem/vídeo, mesmo que o container seja quadrado e a mídia seja retangular
 export const MediaContainer = styled.div`
   width: 100%;
   height: 200px;
   border-radius: 12px;
   overflow: hidden;
-  background-color: #000; /* Fundo preto para o vídeo não ter barras brancas estranhas */
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +42,7 @@ export const MediaContainer = styled.div`
   img, video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Faz a imagem/vídeo preencher o espaço sem distorcer */
+    object-fit: cover;
   }
 `;
 
@@ -56,12 +63,13 @@ export const CardCategoria = styled.span`
   margin-bottom: 10px;
 `;
 
+// Estilização da descrição e botão de favorito sempre no rodapé com flex-grow
 export const CardDescricao = styled.p`
   color: #636e72;
   font-size: 0.88rem;
   line-height: 1.4;
   margin-bottom: 16px;
-  flex-grow: 1; /* Empurra o botão de favoritar sempre para o rodapé */
+  flex-grow: 1;
 `;
 
 export const BotaoFavorito = styled.button`

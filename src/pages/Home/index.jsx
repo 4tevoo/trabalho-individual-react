@@ -1,12 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as S from './style';
 import Card from '../../components/Card';
 import { listaGatos, videoLendario } from '../../data/dados';
+import { useNavigate } from 'react-router-dom';
+import gatoZoiando from '../../assets/gato_zoiando.jpg';
 
 function Home() {
+  const navigate = useNavigate();
   const [categoriaAtiva, setCategoriaAtiva] = useState('Todos');
   const [favoritos, setFavoritos] = useState([]);
   const [modalAberto, setModalAberto] = useState(false);
+
+  const [carregando, setCarregando] = useState(true);
+  
+  useEffect(() => {
+    if (document.readyState === 'complete') {
+      setCarregando(false);
+    } else {
+      const lidarComCarregamentoCompleto = () => setCarregando(false);
+      window.addEventListener('load', lidarComCarregamentoCompleto);
+      
+      return () => window.removeEventListener('load', lidarComCarregamentoCompleto);
+    }
+  }, []);
 
   const lidarComFavoritar = (id) => {
     if (id === 10) {
@@ -31,13 +47,40 @@ function Home() {
       return true;
     }
     return gato.categoria === categoriaAtiva; 
-  });
+    });
+    if (carregando) {
+    return (
+      <S.TelaLoading>
+        <S.GatoLoading src={gatoZoiando} alt="Gato Zoiando Curioso" />
+        <S.TextoLoading>O Gato Zoiudo está analisando os dados</S.TextoLoading>
+      </S.TelaLoading>
+    );
+  }
 
   return (
     <S.PaginaContainer>
       <S.Cabecalho>
         <h1>Galeria de Gatos Diferenciados</h1>
         <p>Aproveite os efeitos passando o mouse nos cards! (Alguns)</p>
+        {}
+        <button 
+          onClick={() => navigate('/sombrio')} 
+          style={{
+          marginTop: '15px', 
+          cursor: 'pointer', 
+          padding: '10px 20px', 
+          borderRadius: '20px', 
+          border: '2px solid #e17055', 
+          backgroundColor: '#ffffff', 
+          fontWeight: 'bold', 
+          color: '#e17055',
+          transition: 'all 0.2s'
+        }}
+        onMouseEnter={(e) => { e.target.style.backgroundColor = '#e17055'; e.target.style.color = '#ffffff'; }}
+        onMouseLeave={(e) => { e.target.style.backgroundColor = '#ffffff'; e.target.style.color = '#e17055'; }}
+      >
+        💀 Acessar o Lado Sombrio dos Gatos (Lore Secreta)
+      </button>
       </S.Cabecalho>
 
       <S.AreaControles>

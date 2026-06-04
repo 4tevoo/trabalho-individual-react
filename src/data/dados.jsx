@@ -24,7 +24,7 @@ export const imgBackground = imagemBackground;
 export const listaGatos = [
   {
     id: 1,
-    nome: "Gato Banana",
+    nome: "Ganana, o Gato Banana",
     categoria: "Fruta",
     descricao: "Gato banana. Ou banana gato? Ele é triste...",
     midia: bananacat,
@@ -33,7 +33,7 @@ export const listaGatos = [
   },
   {
     id: 2,
-    nome: "Gato Bleh",
+    nome: "Gato 'Bleh'",
     categoria: "Debochado",
     descricao: "Mostrando a língua para os prazos apertados dos trabalhos. Dos 4 trabalhos...",
     midia: blehCat,
@@ -41,7 +41,7 @@ export const listaGatos = [
   },
   {
     id: 3,
-    nome: "Gato Desconfiado",
+    nome: "O Desconfigato",
     categoria: "Julgador",
     descricao: "O que vc ta olhando???",
     midia: desconfigato,
@@ -49,7 +49,7 @@ export const listaGatos = [
   },
   {
     id: 4,
-    nome: "Gato de Guerra",
+    nome: "Traumatigato",
     categoria: "Brisado",
     descricao: "Dizem que deu DELETE sem WHERE...",
     midia: gatoFlashback,
@@ -57,7 +57,7 @@ export const listaGatos = [
   },
   {
     id: 5,
-    nome: "Gato Zoiando",
+    nome: "Curiosogato",
     categoria: "Curioso",
     descricao: "Tentando entender o código que ele mesmo fez alguns dias atrás...",
     midia: gatoZoiando,
@@ -82,7 +82,7 @@ export const listaGatos = [
   },
   {
     id: 8,
-    nome: "Pop Cat",
+    nome: "Bop Cat",
     categoria: "Meme Clássico",
     descricao: "A lenda do POP cat.",
     midia: popClosed,
@@ -107,9 +107,9 @@ export const listaGatos = [
   },
   {
     id: 11,
-    nome: "Gato Saltitante",
+    nome: "Gato Feliz e Saltitante",
     categoria: "Vídeo Gifs",
-    descricao: "Ele ta muito feliz.",
+    descricao: "Ele ta muito feliz. E saltitante.",
     midia: pulagato,
     tipo: "video"
   },

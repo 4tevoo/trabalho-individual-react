@@ -1,17 +1,63 @@
-import styled from 'styled-components';
 import { imgBackground } from '../../data/dados';
+import styled, { keyframes } from 'styled-components';
+
+// Gatinho de loading, parece que pesei demais nos assets e ta demorando...
+const balancoGato = keyframes` 
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+`;
+
+export const TelaLoading = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1e272e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  gap: 20px;
+`;
+// Fui adicionar o loading e 10mil é um a mais do de baixo pra cobrir tudo kkkkkk
+// Vou deixar pela graça
+
+export const GatoLoading = styled.img`
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fdcb6e;
+  box-shadow: 0 0 20px rgba(253, 203, 110, 0.5);
+  animation: ${balancoGato} 1.2s ease-in-out infinite;
+`;
+
+export const TextoLoading = styled.p`
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  
+  &::after {
+    content: '...';
+    display: inline-block;
+    width: 0px;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: reticencias 1.5s steps(4, end) infinite;
+  }
+
+  @keyframes reticencias {
+    to { width: 1.25em; }
+  }
+`;
 
 export const PaginaContainer = styled.div`
   min-height: 100vh;
   padding: 40px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
-  // Configuração para a imagem cobrir toda a tela de fundo
-  background-image: url(${imgBackground});
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
 `;
 
 export const Cabecalho = styled.header`
@@ -113,9 +159,9 @@ export const OverlayModal = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 9999; 
 `;
-
+// z-index 9999 é um exagero absurdo engraçado e que curiosamente funciona
 export const ConteudoModal = styled.div`
   position: relative;
   width: 90%;
