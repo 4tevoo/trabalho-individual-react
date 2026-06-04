@@ -9,8 +9,8 @@ import michael from '../assets/michael.jpg';
 import michaelFalando from '../assets/michael_falando.jpg';
 import popClosed from '../assets/pop-closed.jpg';
 import popOpen from '../assets/pop-open.jpg';
-
-
+import fotoMeusGatos from '../assets/meus_gatos.jpeg';
+import fotoProf from '../assets/prof.jpg';
 import giragato from '../assets/giragato.mp4';
 import pulagato from '../assets/pulagato.mp4';
 
@@ -99,10 +99,26 @@ export const listaGatos = [
   },
   {
     id: 10,
+    nome: "Meus Chefes",
+    categoria: "Família",
+    descricao: "Os verdadeiros donos do projeto e responsáveis por eu estar codificando essa hora.",
+    midia: fotoMeusGatos,
+    tipo: "imagem"
+  },
+  {
+    id: 11,
     nome: "Gato Saltitante",
     categoria: "Vídeo Gifs",
     descricao: "Ele ta muito feliz.",
     midia: pulagato,
     tipo: "video"
+  },
+  {
+    id: 12,
+    nome: "Prof no Escuro",
+    categoria: "Aulas Infinitas",
+    descricao: "Print do exato momento em que a ENEL sequestra o prof",
+    midia: fotoProf,
+    tipo: "imagem"
   }
 ];

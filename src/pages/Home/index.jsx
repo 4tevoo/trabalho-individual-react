@@ -9,6 +9,11 @@ function Home() {
   const [modalAberto, setModalAberto] = useState(false);
 
   const lidarComFavoritar = (id) => {
+    if (id === 10) {
+      alert("Esses são meus, sai fora!");
+      return;
+    }
+
     if (favoritos.includes(id)) {
       setFavoritos(favoritos.filter(favId => favId !== id));
     } else {
@@ -53,9 +58,7 @@ function Home() {
         </S.ContainerFiltros>
       </S.AreaControles>
 
-      {}
       <S.GradeCards>
-        {}
         {categoriaAtiva === '❤️ Favoritos' && gatosFiltrados.length === 0 ? (
           <p style={{ color: '#ffffff', backgroundColor: 'rgba(0,0,0,0.6)', padding: '15px 30px', borderRadius: '20px', fontWeight: 'bold' }}>
             Nenhum gatinho favoritado ainda... Dê um ❤️ em algum deles! Se não vc é mau
@@ -72,7 +75,6 @@ function Home() {
         )}
       </S.GradeCards>
 
-      {}
       {modalAberto && (
         <S.OverlayModal onClick={() => setModalAberto(false)}>
           <S.ConteudoModal onClick={(e) => e.stopPropagation()}>
