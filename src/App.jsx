@@ -1,9 +1,12 @@
+import React from 'react';
+import Home from './pages/Home';
+
 function App() {
   return (
-    <div>
-      <h1>Projeto Gatos - Carregando...</h1>
-    </div>
-  )
+    <>
+      <Home />
+    </>
+  );
 }
 
-export default App
+export default App;
